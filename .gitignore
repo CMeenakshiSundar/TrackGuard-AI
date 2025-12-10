@@ -1,23 +1,41 @@
-.venv
+# ---------------------------------------
+# Python environment & compiled files
+# ---------------------------------------
+.venv/
 __pycache__/
 *.pyc
+*.pyo
 
+# ---------------------------------------
+# Logs & temporary files
+# ---------------------------------------
 events.txt
+*.log
 
-# Ignore FFmpeg builds
-ffmpeg-*/
-ffmpeg*/
-ffmpeg-2025-12-07-git-c4d22f2d2c-full_build/
-
-# Ignore large media/video
+# ---------------------------------------
+# Ignore all media/video files
+# (Input CCTV + generated output videos)
+# ---------------------------------------
 *.mp4
 *.avi
 *.mov
 *.mkv
 
+# ---------------------------------------
 # Ignore compressed archives
+# ---------------------------------------
 *.zip
 *.7z
 
-# Allow model file
-!yolov8n.pt
+# ---------------------------------------
+# Ignore FFmpeg builds (they are huge)
+# ---------------------------------------
+ffmpeg*/
+ffmpeg-*/
+
+# ---------------------------------------
+# Allow these files even if extensions match above
+# ---------------------------------------
+!announcement.wav     # keep your buzzer / alert file
+!app.py               # your application code
+*yolov8n.pt           # YOLO model (optional but small enough)
