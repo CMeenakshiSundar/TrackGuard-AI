@@ -1,0 +1,4 @@
+.venv
+events.txt
+ffmpeg-*/
+ffmpeg*/
